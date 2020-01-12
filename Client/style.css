@@ -49,5 +49,39 @@ body{
 }
 
 .font{
-    color:black;
+    color:white;
+}
+.analytic
+{
+
+}
+
+.analytic .x.axis text {
+    fill: white;
+}
+.analytic .y.axisRight text {
+    fill: orange;
+}
+
+.analytic .y.axisLeft text {
+    fill: steelblue;
+}
+
+.analytic .axis path,
+.analytic .axis line {
+  fill: none;
+  stroke:white;
+  shape-rendering: crispEdges;
+}
+
+.analytic .bar1 {
+  fill: steelblue;
+}
+
+.analytic .bar2 {
+  fill: orange;
+}
+
+.analytic .x.axis path {
+  display: none;
 }

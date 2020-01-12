@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Survy</title>
+  <title>Analytic</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
 </head>
 
 <body>
@@ -19,10 +20,18 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="survy.html">Survy</a>
-            </li>
             <li class="nav-item">
+                <a class="nav-link" href="survy.html">Survy</a>
+              </li>
+              <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Analytic
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="analytics.html">Over view</a>
+                    </div>
+              </li>
+                <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
               </li>
         </div>
@@ -30,86 +39,50 @@
 
     <div class="container-fluid body">
         <div class="row justify-content-between fit-parent">
-            <div class="col-5 fit-parent">
-        <div class="container main-content ">
-            <form action="#">
-                <div class="row pt-3 pl-2 pr-2">
-                    <h4><label>Fillout the form and get your predicate grade</label></h4>
-                </div>
-
-                <div class="row pt-3 pl-2 pr-2">                
-                <label>What is your age?</label>
-                <select name="age" class="custom-select mb-3 select-size font">
-                  <option selected>Range of age</option>
-                  <option value="18-21">18-21</option>
-                  <option value="22-25">22-25</option>
-                  <option value="26-28">26-28</option>
-                  <option value="29-33">29-33</option>
-                </select>
-                </div>
-
-                <div class="row pt-3 pl-2 pr-2">                
-                <label>Which class do you whant to predict?</label><br>
-                <select name="class" class="custom-select mb-3 select-size font">
-                    <option selected>Lecture</option>
-                    <option value="Information Retrieval">Information Retrieval</option>
-                    <option value="Information Mining">Information Mining</option>
-                    <option value="Learning Analytics">Learning Analytics</option>
-                    <option value="Internet of things">IOT</option>
-                    <option value="Interactive System">Interactive System</option>
-                    <option value="Modellierung">Modellierung</option>
-                </select>                
-                </div>
-
-                <div class="row pt-3 pl-2 pr-2">                
-                <label>Studing time per week</label><br>
-                <select name="time" class="custom-select mb-3 select-size font">
-                    <option selected>Time of studing</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="more">more</option>
-                </select>
-            </div>
-
-            <div class="row pt-3 pl-2 pr-2">                
-                <label>Free time per day</label><br>
-                <select name="time" class="custom-select mb-3 select-size font">
-                    <option selected>Time of studing</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="more">more</option>
-                </select>
-            </div>
-
-            <div class="row pt-3 pl-2 pr-2">               
-                    <label for="customRange">How many past class failures do you have?</label><br>
-                    <input type="range" class="custom-range" id="customRange" name="points1" min="0" max="5"><br>
-                </div>
-
-                <div class="row pt-3 pl-2 pr-2">                
-                    <label for="customRange">How is your current health status?</label><br>
-                    <input type="range" class="custom-range" id="customRange" name="points1" min="0" max="10"><br><br>
-                </div>
-
-                <div class="row pt-3 pl-2 pr-2 justify-content-between">                
-                    <button id="predictbtn" type="button" class="btn btn-primary">Predict</button>
-                    <button type="submit" class="btn btn-primary">Analytic</button>
-                 </div>                        
-            </form>
+            <div class="col-12 fit-parent">
+        <div class="container main-content analytic">
+           
         </div></div>
-        <div class="col-4">
-        <div id="resultbox" class="container result-content">
-            <p>your predicted grade is </p> 
-            <span></span>
-        </div></div>
+       
     </div>
     </div>
-    <script src="script.js"></script>
+    <script src="analytic.js"></script>
+    <textarea id="datacsv" cols="30" rows="10" style="display: none;">
+gender;country;age;studyname;languagelevelEng;laguageLevelGer;coursename;difficulty;languagecourse;learningmethodAttendingLectures;learningmethodAttendingExercises;learningmethodOnlineSelfstudy;learningmethodGroup_Study;participateAttending_Lectures;participateAttendingExercises;priviousknowledge;manyhoursstudy;langugagelevel;grade;comments
+Female;Germany;23;M.Sc. Komedia;B2;Native;Cloud, Web&Mobile;2;German;0,25;0,25;1;0;0,25;0;No;05.10.2020;Yes;20
+Male;Turkey;28;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;B2;Information Mining;4;Englisch;1;1;1;1;1;1;No;01.02.2020;Yes;22
+Female;Iran;29;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;C1;Learning Analytics;3;Englisch;1;0,75;1;0,75;1;1;Yes;05.10.2020;Yes;23
+Male;China;23;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;B1;Information Mining;4;Englisch;1;1;1;1;1;1;No;02.05.2020;Yes;27
+Female;China;26;M.Sc. Computer Engineering (Intelligent Networked Systems);B1;B1;Learning Analytics;3;Englisch;1;1;1;1;0,75;0,75;Yes;01.02.2020;Yes;15
+Female;China;26;M.Sc. Computer Engineering (Intelligent Networked Systems);B1;B1;Learning Analytics;3;Englisch;1;1;1;1;0,75;0,75;Yes;01.02.2020;Yes;15
+Male;Cameroon;22;M.Sc. Computer Engineering (Intelligent Networked Systems);C1;B2;Advanced Web Technologies;2;Englisch;0,75;0,75;0,75;0,25;0,75;1;Yes;05.10.2020;Yes;13
+Female;China;26;M.Sc. Computer Engineering (Intelligent Networked Systems);B1;B1;Learning Analytics;3;Englisch;1;1;1;1;0,75;0,75;Yes;01.02.2020;Yes;15
+Male;India;31;M.Sc. Computer Engineering (Intelligent Networked Systems);C1;B1;Advanced Web Technologies;2;Englisch;0,5;0,5;0,75;0,25;0,5;0,5;Yes;02.05.2020;Yes;23;not that tough , but you have to spend alot of time
+Female;Iran;33;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;B2;Information Retrieval;3;Englisch;0,75;1;0;0;0,75;1;No;05.10.2020;Yes;2
+Female;Iran;30;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;A2;Advanced Web Technologies;4;Englisch;1;1;0,75;0,5;1;1;No;05.10.2020;Yes;27
+Female;China;24;M.Sc. Computer Engineering (Interactive Systems and Visualization);B2;B1;Advanced Image Synthesis;5;Englisch;0,75;0,75;1;0,25;0,75;0,75;No;02.05.2020;Yes;33
+Male;Iran;25;M.Sc. Computer Engineering (Intelligent Networked Systems);C1;B2;Information Retrieval;3;Englisch;0,75;1;0,5;0,25;0,75;1;Yes;01.02.2020;Yes;1
+Male;Pakistan;23;M.Sc. Computer Engineering (Intelligent Networked Systems);C1;B1;Distributed Systems;4;Englisch;0,25;0;1;1;1;0,75;Yes;01.02.2020;Yes;0;The exam pattern and exam doesnâ€™t match at all. Lectures and exercises are not enough to pass the exam. You need to study in depth on your own.
+Male;Iraq;25;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;Native;Entwicklung sicherer Software;3;Englisch;0,25;0,75;0,5;0,75;0,75;0,5;No;01.02.2020;Yes;32
+Female;Iran;28;M.Sc. Computer Engineering (Intelligent Networked Systems);C1;B1;Internet of Things: Protocols and System Software;5;Englisch;0,5;0,5;0,75;0,25;0,75;0,75;No;02.05.2020;Yes;27
+Female;Iran;25;M.Sc. Computer Engineering (Intelligent Networked Systems);C1;C1;Information Engineering;4;Englisch;1;0,75;0,75;0,5;0,75;0,75;No;01.02.2020;Yes;2
+Male;Pakistan;28;M.Sc. Computer Engineering (Intelligent Networked Systems);C1;A2;Advanced Image Synthesis;4;Englisch;1;0,25;0,5;0;0,5;0;Yes;02.05.2020;Yes;3
+Male;Iran;29;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;B1;Information Engineering;4;Englisch;0,25;0,5;0,5;0,5;0,5;0,5;Yes;05.10.2020;Yes;0
+Male;Iran;33;M.Sc. Mechanical Engineering (Energy and Environmental Engineering);B2;C1;Energie und Umwelt;4;German;0,5;0,75;1;1;1;1;Yes;02.05.2020;Yes;29
+Female;Iran;32;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;C1;Learning Analytics;3;Englisch;0,5;0,75;0,75;1;0,25;0,5;No;01.02.2020;Yes;2;It was a interesting and practical course 
+Male;Germany;28;M.Sc. Angewandte Informatik;B2;Native;Computer Graphics;3;German;0,75;1;0;0,5;1;1;Yes;01.02.2020;Yes;2
+Female;Iran;35;M.Sc. Embedded Systems Engineering;B2;B1;Advanced Mobile Communications;4;Englisch;0;0,5;0,5;0,25;0,5;1;Yes;01.02.2020;Yes;33
+Female;Iran;30;M.Sc. Embedded Systems Engineering;B2;B1;Distributed Systems;5;Englisch;1;0;0,75;0,25;1;0;No;02.05.2020;Yes;33
+Female;Iran;35;M.Sc. Embedded Systems Engineering;B2;B1;Global Engineering;2;Englisch;0,75;0;0,25;0,5;0,5;0;No;01.02.2020;Yes;27
+Female;Iran;35;M.Sc. Embedded Systems Engineering;B2;B1;Digitale Schaltungstechnik;4;Englisch;0,5;1;0,75;0,5;0,5;0,5;Yes;02.05.2020;Yes;23
+Female;Iran;35;M.Sc. Embedded Systems Engineering;B2;B1;Bildsignaltechnik;5;German;0,75;0,5;0,5;0,5;0,75;0,25;No;02.05.2020;No;3
+Female;Canada;29;M.Sc. Automation and Control Engineering;A2;B1;Advanced Modeling and Simulation Techniques;3;Englisch;0,5;0,5;0,25;0,5;0,25;0,5;Yes;05.10.2020;Yes;1
+Female;Iran;32;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;C1;Modellierung, Analyse, Verifikation;4;German;1;1;0,5;0,75;1;1;No;02.05.2020;No;3
+Female;Iran;32;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;C1;Information Mining;3;Englisch;0,5;1;0,75;0,5;0,25;1;Yes;02.05.2020;Yes;23
+Female;Iran;32;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;Native;Information Retrieval;3;Englisch;0,5;0,75;0,75;0,75;0,25;0,75;No;05.10.2020;Yes;2
+Female;Iran;26;M.Sc. Computer Engineering (Intelligent Networked Systems);B2;B2;Advanced Web Technologies;3;Englisch;1;1;1;1;1;1;Yes;05.10.2020;Yes;23
+Male;Germany;33;M.Sc. Embedded Systems Engineering;B2;C1;Advanced Numerical Methods;3;Englisch;0,5;0,5;0,5;0,5;0,5;0,5;Yes;05.10.2020;Yes;10;fd jhgkfjdgfg
+
+    </textarea>
     </body>
 </html>
