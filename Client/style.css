@@ -1,0 +1,53 @@
+body{
+    background-image: url("big data1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000014;
+}
+
+.body{
+    position: absolute;
+    bottom: 30px;
+    top: 135px;
+    right: 0;
+    left: 0;
+}
+
+.main-content{
+    color: white;
+    padding: 15px;
+    margin-left: 25px;  
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    border:solid 1px #3bbde1;
+    border-radius: 4px;
+}
+
+.result-content{
+    color: white;
+    padding: 15px;
+    margin-left: 25px;  
+    width: 90%;
+    height: 150px;
+    overflow: scroll;
+    border:solid 1px #3bbde1;
+    border-radius: 4px;
+    display:none;
+}
+
+.fit-parent{
+    overflow-y: hidden;
+    height: 100%;
+}
+.navbar-inverse {
+    background-color: #000014;
+}
+
+.select-size{
+    width: 100%;
+}
+
+.font{
+    color:black;
+}
