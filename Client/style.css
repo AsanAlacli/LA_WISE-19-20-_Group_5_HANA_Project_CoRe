@@ -16,12 +16,13 @@ body{
 .main-content{
     color: white;
     padding: 15px;
-    margin-left: 25px;  
+    margin-left: 0;  
     width: 100%;
     height: 100%;
     overflow: scroll;
     border:solid 1px #3bbde1;
     border-radius: 4px;
+    
 }
 
 .result-content{
