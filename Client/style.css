@@ -36,6 +36,12 @@ body{
     border-radius: 4px;
     display:none;
 }
+.main-content.analytic{
+    
+    padding: 0;
+
+    
+}
 
 .fit-parent{
     overflow-y: hidden;
@@ -50,7 +56,7 @@ body{
 }
 
 .font{
-    color:white;
+    color:black;
 }
 .analytic
 {
@@ -86,3 +92,43 @@ body{
 .analytic .x.axis path {
   display: none;
 }
+
+.tick text {
+    fill: white;
+}
+
+.tick line {
+    stroke: white;
+}
+
+.domain {
+    stroke: white;
+}
+
+.domain text {
+    fill:white;
+}
+.c3 path, .c3 line {
+    fill: none;
+    stroke:white ;
+}
+
+.c3-tooltip td{
+    color: black;
+}
+
+.c3-circle{
+    fill:pink;
+}
+
+.c3-axis-y-label,.c3-axis-x-label{
+    fill:white;
+}
+
+.c3-legend-item text {
+    fill:white;
+}
+#chart .c3-line-grade {
+    stroke-width: 5px;
+    stroke:white ;
+  }
