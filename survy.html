@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Survy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" width="40" height="40">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="survy.html">Survey</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Analytic
+          </a>
+          <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="analytics.html">Over view</a>
+            <a class="dropdown-item" href="analyz-scatterplott.html">Scatter plot</a>
+            <a class="dropdown-item" href="pie-chart.html">Pie Chart</a>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+    </div>
+  </nav>
+
+  <div class="container-fluid body">
+    <div class="row justify-content-between fit-parent">
+      <div class="col-5 fit-parent">
+        <div class="container main-content ">
+          <form action="#">
+            <div class="row pt-3 pl-2 pr-2">
+              <h4><label>Fillout the form and get your predicate grade</label></h4>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>What is your age?</label>
+              <select name="age" class="custom-select mb-3 select-size font">
+                <option selected>Range of age</option>
+                <option value="18-21">18-21</option>
+                <option value="22-25">22-25</option>
+                <option value="26-28">26-28</option>
+                <option value="29-33">29-33</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Which lecture do you whant to predict?</label><br>
+              <select name="class" class="custom-select mb-3 select-size font">
+                <option selected>Lecture</option>
+                <option value="Information Retrieval">Information Retrieval</option>
+                <option value="Information Mining">Information Mining</option>
+                <option value="Learning Analytics">Learning Analytics</option>
+                <option value="Internet of things">IOT</option>
+                <option value="Interactive System">Interactive System</option>
+                <option value="Modellierung">Modellierung</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Studing time per week</label><br>
+              <select name="time" class="custom-select mb-3 select-size font">
+                <option selected>Time of studing</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="more">more</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Free time per day</label><br>
+              <select name="time" class="custom-select mb-3 select-size font">
+                <option selected>Time of studing</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="more">more</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">How is your language level?</label><br>
+              <input type="range" class="custom-range" id="customRange" name="points1" min="0" max="5"><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">How is your current health status?</label><br>
+              <input type="range" class="custom-range" id="customRange" name="points1" min="0" max="5"><br><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2 justify-content-center">
+              <button id="predictbtn" type="button" class="btn btn-primary">Predict</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-4">
+        <div id="resultbox" class="container result-content">
+          <p>your predicted grade is </p>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
