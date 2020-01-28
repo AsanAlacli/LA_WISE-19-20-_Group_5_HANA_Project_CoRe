@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -15,15 +15,15 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="#">
-      <img src="logo.png" width="40" height="40">
+      <img src="static/image/logo.png" width="40" height="40">
     </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="survy.html">Survey</a>
+          <a class="nav-link" href="/survey">Survey</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -31,11 +31,12 @@
             Analytic
           </a>
           <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="analytics.html">Over view</a>
-            <a class="dropdown-item" href="analyz-scatterplott.html">Scatter plot</a>
-            <a class="dropdown-item" href="pie-chart.html">Pie Chart</a>
+            <a class="dropdown-item" href="/analytics">Over view</a>
+            <a class="dropdown-item" href="/analytics_pie_freq">Pie plot</a>
+          </div>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
     </div>
   </nav>
@@ -49,14 +50,14 @@
               <h4><label>Fillout the form and get your predicate grade</label></h4>
             </div>
 
+
             <div class="row pt-3 pl-2 pr-2">
               <label>What is your age?</label>
               <select name="age" class="custom-select mb-3 select-size font">
-                <option selected>Range of age</option>
-                <option value="18-21">18-21</option>
-                <option value="22-25">22-25</option>
-                <option value="26-28">26-28</option>
-                <option value="29-33">29-33</option>
+                <option selected></option>
+                {% for age in ages %}
+               <option  value="{{age[1]}}">{{age[0]}}</option>
+               {% endfor %}
               </select>
             </div>
 
@@ -64,12 +65,9 @@
               <label>Which lecture do you whant to predict?</label><br>
               <select name="class" class="custom-select mb-3 select-size font">
                 <option selected>Lecture</option>
-                <option value="Information Retrieval">Information Retrieval</option>
-                <option value="Information Mining">Information Mining</option>
-                <option value="Learning Analytics">Learning Analytics</option>
-                <option value="Internet of things">IOT</option>
-                <option value="Interactive System">Interactive System</option>
-                <option value="Modellierung">Modellierung</option>
+                {% for coursename in coursenames %}
+               <option  value="{{coursename[1]}}">{{coursename[0]}}</option>
+               {% endfor %}
               </select>
             </div>
 
@@ -110,20 +108,22 @@
             </div>
 
             <div class="row pt-3 pl-2 pr-2 justify-content-center">
-              <button id="predictbtn" type="button" class="btn btn-primary">Predict</button>
+              <button id="predictbtn" type="submit" class="btn btn-primary">Predict</button>
             </div>
           </form>
         </div>
       </div>
       <div class="col-4">
         <div id="resultbox" class="container result-content">
-          <p>your predicted grade is </p>
-          <span></span>
+          <h2>your predicted grade is </h2>
+          <span class="title">Based on regression :</span> <span class="val lr"></span><br>
+
+          <span class="title">Based on k-nearest-neighbor :</span> <span class="val knn"></span>
         </div>
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="/static/script/script.js"></script>
 </body>
 
 </html>

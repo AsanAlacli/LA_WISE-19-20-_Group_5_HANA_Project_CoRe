@@ -1,5 +1,5 @@
 body{
-    background-image: url("big data1.jpg");
+    background-image: url("/static/image/big data1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000014;
@@ -61,6 +61,13 @@ body{
 .analytic
 {
     background-color: #00000094;
+}
+
+.analytic > h2
+{
+    text-align: center;
+    text-shadow:rgb(139, 129, 129);
+    font-size: medium;
 }
 
 .analytic .x.axis text {
