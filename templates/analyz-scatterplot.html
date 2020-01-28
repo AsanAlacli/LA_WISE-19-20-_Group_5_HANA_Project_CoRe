@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.12/c3.css">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.js"></script>
@@ -18,15 +18,15 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="#">
-      <img src="logo.png" width="40" height="40">
+      <img src="static/image/logo.png" width="40" height="40">
     </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="survy.html">Survey</a>
+          <a class="nav-link" href="/survey">Survey</a>
         </li>
         <li class="nav-item dropdown active">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -34,19 +34,19 @@
             Analytic
           </a>
           <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="analytics.html">Over view</a>
-            <a class="dropdown-item" href="analyz-scatterplott.html">Scatter plot</a>
-            <a class="dropdown-item" href="pie-chart.html">Pie Chart</a>
+            <a class="dropdown-item" href="/analytics">Over view</a>
+            <a class="dropdown-item" href="/analytics_scatter">Scatter</a>
+            <a class="dropdown-item" href="/analytics_pie_freq">Pie plot</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
     </div>
   </nav>
 
   <div class="container-fluid body">
-    <div class="row justify-content-between fit-parent">
+    <div class="row  fit-parent">
       <div class="col-9 fit-parent">
         <div class="container main-content analytic">
         </div>
@@ -55,9 +55,9 @@
         <div id="resultbox" class="container result-content" style="display: block;">
 
           <div class="row pt-3 pl-2 pr-2">
-            <label>Select your Study programm please:</label>
+            <label>Select your Study program please:</label>
             <select name="age" id="drpAge" class="custom-select mb-3 select-size font">
-              <option selected>All</option>
+              <option value="" selected>All</option>
               <option value="M.Sc. Computer Engineering (Intelligent Networked Systems)">
                 M.Sc. Computer Engineering (Intelligent Networked Systems)
               </option>
@@ -84,7 +84,7 @@
   </div>
 
 
-  <script src="analyz-scatterplot.js"></script>
+  <script src="static/script/analyz-scatterplot.js"></script>
 </body>
 
 </html>

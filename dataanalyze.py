@@ -17,6 +17,18 @@ def meanOfDataWith2Groupping(dataset,targetField,grouppingField1,grouppingField2
         group1.append({'key':str(vf1),'val':group2})
     return group1
 
+def scatterData(dataset,xField,yField,searchField,searchValue):
+    if not not searchValue:
+        dataset=dataset.loc[dataset[searchField]==searchValue]
+    data = dataset[xField].values.tolist() 
+    data.insert(0,xField)
+    data_x = dataset[yField].values.tolist() 
+    data_x.insert(0,yField)
+
+    return {'data':data,'data_x':data_x}
+
+
+
 def frequenceData(dataset,targetField):
     freq=dataset.groupby(targetField).size()
     sums=[]
