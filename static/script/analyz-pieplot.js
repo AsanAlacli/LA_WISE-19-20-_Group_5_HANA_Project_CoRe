@@ -31,7 +31,7 @@ function showchart(fieldName) {
 $(function () {
     
   
-   showchart("age");
+   showchart("gender");
   $("#fieldName").change((e) => {
     $('.container.main-content h2 span').html($("option:selected",'#fieldName').html())
     showchart( $(e.target).val());
