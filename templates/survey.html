@@ -54,7 +54,7 @@
 
             <div class="row pt-3 pl-2 pr-2">
               <label>Select your gender?</label>
-              <select name="gender" class="custom-select mb-3 select-size font">
+              <select name="gender" class="custom-select mb-3 select-size font" required>
                 <option selected></option>
                 {% for gender in genders %}
                <option  value="{{gender[1]}}">{{gender[0]}}</option>
@@ -64,7 +64,7 @@
 
             <div class="row pt-3 pl-2 pr-2">
               <label>What is your age?</label>
-              <select name="age" class="custom-select mb-3 select-size font">
+              <select name="age" class="custom-select mb-3 select-size font" required> 
                 <option selected></option>
                 {% for age in ages %}
                <option  value="{{age[1]}}">{{age[0]}}</option>
@@ -74,7 +74,7 @@
 
             <div class="row pt-3 pl-2 pr-2">
               <label>Which course do you whant to be predicted?</label><br>
-              <select name="coursename" class="custom-select mb-3 select-size font">
+              <select name="coursename" class="custom-select mb-3 select-size font" required>
                 <option selected>Lecture</option>
                 {% for coursename in coursenames %}
                <option  value="{{coursename[1]}}">{{coursename[0]}}</option>
@@ -84,7 +84,7 @@
 
             <div class="row pt-3 pl-2 pr-2">
               <label>What is the main language of the course?</label>
-              <select name="mainlanguages" class="custom-select mb-3 select-size font">
+              <select name="mainlanguages" class="custom-select mb-3 select-size font" required>
                 <option selected></option>
                 {% for mainlanguages in mainlanguagess %}
                <option  value="{{mainlanguages[1]}}">{{mainlanguages[0]}}</option>
@@ -94,7 +94,7 @@
 
             <div class="row pt-3 pl-2 pr-2">
               <label>Do you have privious knowledge about the course?</label>
-              <select name="priviousknowledge" class="custom-select mb-3 select-size font">
+              <select name="priviousknowledge" class="custom-select mb-3 select-size font" required>
                 <option selected></option>
                 {% for priviousknowledge in priviousknowledges %}
                <option  value="{{priviousknowledge[1]}}">{{priviousknowledge[0]}}</option>
@@ -104,7 +104,7 @@
 
             <div class="row pt-3 pl-2 pr-2">
               <label>How many hours do you study per week?</label>
-              <select name="hours" class="custom-select mb-3 select-size font">
+              <select name="hours" class="custom-select mb-3 select-size font" required>
                 <option selected></option>
                 {% for hours in hourss %}
                <option  value="{{hours[1]}}">{{hours[0]}}</option>

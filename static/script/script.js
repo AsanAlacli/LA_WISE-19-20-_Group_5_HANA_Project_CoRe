@@ -34,7 +34,7 @@ $(function () {
                 valuelrSpn.html(data.resultlr);
                 valueknnSpn.html(data.resultknn);
             },
-            failure: function (errMsg) {
+            error: function (o,t,errMsg) {
 
                 alert(errMsg);
 

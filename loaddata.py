@@ -4,8 +4,10 @@ from sklearn.model_selection import train_test_split
 
 enc = LabelEncoder()
 
-def loadDataset(datasetName,uselessFields):
-    dataFrame= pd.read_csv("./static/data/"+datasetName +".csv", engine='python',sep=',')
+def loadDataset(datasetName):
+    return pd.read_csv("./static/data/"+datasetName +".csv", engine='python',sep=',')
+    
+def clearData(dataFrame,uselessFields):
     for t in uselessFields.split(','):
         dataFrame = dataFrame.drop(t, 1)
     return dataFrame

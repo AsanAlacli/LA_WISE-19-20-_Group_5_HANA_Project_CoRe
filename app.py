@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash, request, url_for,jsonify,json
 from werkzeug.utils import redirect
-from loaddata import loadTrainData ,loadDataset,encodeData
+from loaddata import loadTrainData ,loadDataset,encodeData,clearData
 from predict import prepareML,calcPredict
 from dataanalyze import meanOfDataWith2Groupping,frequenceData,scatterData
 # App config.
@@ -10,9 +10,10 @@ app.config.from_object(__name__)
 
 CLASSIFIEDFIELD='grade'
 
-dataset=loadDataset('data',"Zeitstempel,country,studyprogram,langLevel(Eng),langLevel(Ger),difficulty,learningmethodLectures,learningmethodExercises,learningmethodSelfstudy,learningmethodGroupStudy,participate,langLevelenough,comments,x")
-
+dataset=loadDataset('data')
+#
 encodendDataset=dataset.copy()
+encodendDataset=clearData(encodendDataset,"Zeitstempel,country,studyprogram,langLevel(Eng),langLevel(Ger),difficulty,learningmethodLectures,learningmethodExercises,learningmethodSelfstudy,learningmethodGroupStudy,participate,langLevelenough,comments,x")
 encodedDataList=[]
 for item in encodendDataset:
     if(item!=CLASSIFIEDFIELD):
