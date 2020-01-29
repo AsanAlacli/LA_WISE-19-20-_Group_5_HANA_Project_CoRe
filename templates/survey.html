@@ -75,7 +75,7 @@
             <div class="row pt-3 pl-2 pr-2">
               <label>Which course do you whant to be predicted?</label><br>
               <select name="coursename" class="custom-select mb-3 select-size font" required>
-                <option selected>Lecture</option>
+                <option selected></option>
                 {% for coursename in coursenames %}
                <option  value="{{coursename[1]}}">{{coursename[0]}}</option>
                {% endfor %}
