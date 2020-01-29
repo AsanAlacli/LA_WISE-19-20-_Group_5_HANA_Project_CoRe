@@ -10,7 +10,7 @@ app.config.from_object(__name__)
 
 CLASSIFIEDFIELD='grade'
 
-dataset=loadDataset('data','comments,x,Zeitstempel')
+dataset=loadDataset('data',"Zeitstempel,country,studyprogram,langLevel(Eng),langLevel(Ger),difficulty,learningmethodLectures,learningmethodExercises,learningmethodSelfstudy,learningmethodGroupStudy,participate,langLevelenough,comments,x")
 
 encodendDataset=dataset.copy()
 encodedDataList=[]
@@ -24,12 +24,17 @@ def converGrade20toGrade4(grade):
     return str(grade)
 
 
-x_train,y_train=loadTrainData(encodendDataset,CLASSIFIEDFIELD,converGrade20toGrade4)
+x_train,y_train,classifiedlabels=loadTrainData(encodendDataset,CLASSIFIEDFIELD,converGrade20toGrade4)
 
 lr=prepareML('lr',x_train,y_train)
 
 knn=prepareML('knn',x_train,y_train)
 
+def parseResult(result):
+    for clabel in classifiedlabels:
+        if(clabel[1]==result):
+            return clabel[0]
+    return "Unknown"
 
 @app.route('/')
 def main():
@@ -77,36 +82,37 @@ def survey():
     genders=[]
     coursenames=[]
     for item in encodedDataList:
-        if(item[0]=='age'):
-            ages=item[1]
         if(item[0]=='gender'):
             genders=item[1]
+        if(item[0]=='age'):
+            ages=item[1]
         if(item[0]=='coursename'):
             coursenames=item[1]
-    return render_template('survey.html',ages=ages,genders=genders,coursenames=coursenames)
+        if(item[0]=='mainlanguages'):
+            mainlanguagess=item[1]
+        if(item[0]=='priviousknowledge'):
+            priviousknowledges=item[1]
+        if(item[0]=='hours'):
+            hourss=item[1]
+    return render_template('survey.html',genders=genders,ages=ages,coursenames=coursenames,
+        mainlanguagess=mainlanguagess,priviousknowledges=priviousknowledges,hourss=hourss)
 
 @app.route('/predict', methods=['POST'])
 def predict():
     req_data = request.get_json()
-    question =[0 for i in range(16)]
-    question[0] =  int(req_data['sex'])
+    question =[0 for i in range(6)]
+    question[0] =  int(req_data['gender'])
     question[1] =  int(req_data['age'])
-    question[2] =  int(req_data['travelTime'])
-    question[3] =  int(req_data['studyTime'])
-    question[4] =  int(req_data['failures'])
-    question[5] =  int(req_data['schoolsup'])
-    question[6] =  int(req_data['famsup'])
-    question[7] =  int(req_data['paid'])
-    question[8] =  int(req_data['activities'])
-    question[9] =  int(req_data['higher'])
-    question[10] = int(req_data['internet'])
-    question[11] = int(req_data['famrel'])
-    question[12] = int(req_data['freetime'])
-    question[13] = int(req_data['goout'])
-    question[14] = int(req_data['health'])
-    question[15] = int(req_data['absences'])
-
-    data = {'resultlr':calcPredict(lr,question),'resultknn':calcPredict(knn,question)}
+    question[2] =  int(req_data['coursename'])
+    question[3] =  int(req_data['mainlanguages'])
+    question[4] =  int(req_data['priviousknowledge'])
+    question[5] =  int(req_data['hours'])
+    
+    resultlr = calcPredict(lr,question)
+    
+    resultknn =calcPredict(knn,question)
+    
+    data = {'resultlr':parseResult(resultlr),'resultknn':parseResult(resultknn)}
     print(jsonify(data))
     return jsonify(data)
      

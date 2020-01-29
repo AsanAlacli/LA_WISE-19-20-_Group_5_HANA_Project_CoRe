@@ -32,11 +32,11 @@ def loadTrainData(dataset,classifiedField,checkClassifiedData):
 
 
     # add new feature to use it for classification
-    grades = dataset[classifiedField].values
+    vals = dataset[classifiedField].values
     labels = []
 
-    for grade in grades:
-        labels.append(checkClassifiedData(grade))
+    for val in vals:
+        labels.append(checkClassifiedData(val))
         
 
     #encoding the data
@@ -44,9 +44,19 @@ def loadTrainData(dataset,classifiedField,checkClassifiedData):
 
     enc_labels = enc.fit_transform(labels)
 
+    arrLen=len(labels)
+    keyValueData=[]
+    i = 0
+    while i < arrLen:
+        keyValueData.append((labels[i],enc_labels[i]))
+        i=i+1
+        
+
+    keyValueLabel=set(keyValueData)
+
     dataset = dataset.values
     #print(df['item'].head())
     #preparing test data
     X_train, X_test, y_train, y_test = train_test_split(dataset,enc_labels,random_state=0,test_size=0.2)
-    return (X_train,y_train)
+    return (X_train,y_train,keyValueLabel)
 #
