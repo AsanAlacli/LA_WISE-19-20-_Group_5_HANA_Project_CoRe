@@ -139,3 +139,10 @@ body{
     stroke-width: 5px;
     stroke:white ;
   }
+
+  .navbar > a.navbar-brand {
+    background-color: #f8f9fa9e;
+    border-radius: 15px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
