@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Survy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
+  <link rel="stylesheet" href="static/css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="static/image/Logo.jpg" width="80" height="70">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/survey">Survey</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Analytic
+          </a>
+          <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/analytics">Overview</a>
+            <a class="dropdown-item" href="/analytics_scatter">Scatter</a>
+            <a class="dropdown-item" href="/analytics_pie_freq">Pie plot</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+    </div>
+  </nav>
+
+  <div class="container-fluid body">
+    <div class="row justify-content-between fit-parent">
+      <div class="col-7 fit-parent">
+        <div class="container main-content ">
+          <form action="#">
+            <div class="row pt-3 pl-2 pr-2">
+              <h4><label>Fillout the form and get your predicate grade</label></h4>
+            </div>
+
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Select your gender?</label>
+              <select name="gender" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                {% for gender in genders %}
+               <option  value="{{gender[1]}}">{{gender[0]}}</option>
+               {% endfor %}
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>What is your age?</label>
+              <select name="age" class="custom-select mb-3 select-size font" required> 
+                <option selected></option>
+                {% for age in ages %}
+               <option  value="{{age[1]}}">{{age[0]}}</option>
+               {% endfor %}
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Which course do you whant to be predicted?</label><br>
+              <select name="coursename" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                {% for coursename in coursenames %}
+               <option  value="{{coursename[1]}}">{{coursename[0]}}</option>
+               {% endfor %}
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>What is the main language of the course?</label>
+              <select name="mainlanguages" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                {% for mainlanguages in mainlanguagess %}
+               <option  value="{{mainlanguages[1]}}">{{mainlanguages[0]}}</option>
+               {% endfor %}
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Do you have previous knowledge about that course?</label>
+              <select name="priviousknowledge" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                {% for priviousknowledge in priviousknowledges %}
+               <option  value="{{priviousknowledge[1]}}">{{priviousknowledge[0]}}</option>
+               {% endfor %}
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>How many hours do you study per week?</label>
+              <select name="hours" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                {% for hours in hourss %}
+               <option  value="{{hours[1]}}">{{hours[0]}}</option>
+               {% endfor %}
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2 justify-content-center">
+              <button id="predictbtn" type="submit" class="btn btn-primary">Predict</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-5">
+        <div id="resultbox" class="container result-content">
+          <h2>your predicted grade is </h2>
+          <span class="title">Based on regression :</span> <span class="val lr"></span><br>
+
+          <span class="title">Based on k-nearest-neighbor :</span> <span class="val knn"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/script/script.js"></script>
+</body>
+
+</html>
