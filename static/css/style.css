@@ -26,13 +26,13 @@ body{
 }
 
 .result-content{
-    color: white;
+    color: rgb(12, 12, 12);
     padding: 15px;
     margin-left: 25px;  
     width: 90%;
     height: 150px;
     overflow: scroll;
-    border:solid 1px #3bbde1;
+    border:solid 1px #070707;
     border-radius: 4px;
     display:none;
 }
