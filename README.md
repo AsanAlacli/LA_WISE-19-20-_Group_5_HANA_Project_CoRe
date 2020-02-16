@@ -1,21 +1,21 @@
-#Course Recommendation 
+# Course Recommendation 
 
 Course Recommendation is a web application built for the ISE students of university of Duisburg-essen to predict their grade and recommend the course based on the grade. this web application has been developed as a final project for the lecture "Learning Analytics" .
 
-# Features and Overview
+## Features and Overview
 
-## Features
+### Features
 
 This project has been focused on giving the students an opportunity to analyse their study method based on the survey questions and improve their methodology to achieve good grade in their desired courses. the main features of this project are:
 
-*Survey section: Questionnaire to predict grade of your desired Course
-*Analysis section:The kind of visualizations of our data set,
+* Survey section: Questionnaire to predict grade of your desired Course
+* Analysis section:The kind of visualizations of our data set,
    
-    *overview: A bar chart using Mean of grades based on attending courses of male and female Students.
-    *Scatter plot: User interactive. Survey students grade of each study program based on age.
-    *pie plot: Pass percentage of Students based on gender, age, course name , language, previous knowledge, study time per week
+    1. overview: A bar chart using Mean of grades based on attending courses of male and female Students.
+    2. Scatter plot: User interactive. Survey students grade of each study program based on age.
+    3. pie plot: Pass percentage of Students based on gender, age, course name , language, previous knowledge, study time per week
 
-## Overview
+### Overview
 
 A quick overview of the full project and features is available on the following youtube video (youtube link). There is also a teaser image and more screenshots on the screenshot folder.
 
@@ -29,11 +29,12 @@ For this project we have used the Flask, Scikit learn, C3 in addition to bootstr
 * [Scikit learn] (https://scikit-learn.org/) -
 * [C3] (https://c3js.org/) - Front-end web app framework fot constructing charts
 * [Bootstrap] (https://getbootstrap.com/) - CSS Framework used for Front-end Design
+
 ## Getting Started
 
 Follow the instructions if you want to get a copy of the project  and run it on your local machine for development and testing purposes.
 
-## prerequisites
+### prerequisites
  
 If you want to run the project locally you will need to install Python in your systems
 
@@ -50,10 +51,10 @@ The app should be opened on a browser on http://127.0.0.1:5000/
 
 ## Authors
 
-** Hoda Ghanbarzadeh: Web App Server with Flask, Web App Client with Bootstrap, jquery, Analysis with Jupyter notebook, Implementation of Charts, Design, Architecture
-** Hasan Halacli: Web app server with Flask, Analysis with Rapid miner
-** Anusha Bangaru: Data collection, Concept and Logo design, Front-end design
-** Implementation of Charts
+* ** Hoda Ghanbarzadeh: Web App Server with Flask, Web App Client with Bootstrap, jquery, Analysis with Jupyter notebook, Implementation of Charts, Design, Architecture
+* ** Hasan Halacli: Web app server with Flask, Analysis with Rapid miner
+* ** Anusha Bangaru: Data collection, Concept and Logo design, Front-end design
+* ** Implementation of Charts
 
 ## Acknowledgements
 
