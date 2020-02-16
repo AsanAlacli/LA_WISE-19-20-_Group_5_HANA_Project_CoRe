@@ -21,7 +21,7 @@ A quick overview of the full project and features is available on the following 
 
 For trying the app please go to the [live demo on Heroku](https://interactive-asl.herokuapp.com/) or download and deploy it locally following the steps described on the get started and deploy section.
 
-## Built With.,
+## Built with
 
 For this project we have used the Flask, Scikit learn, C3 in addition to bootstrap and css framework.
 
