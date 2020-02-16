@@ -53,7 +53,7 @@ The app should be opened on a browser on http://127.0.0.1:5000/
 * ** Hoda Ghanbarzadeh: Web App Server with Flask, Web App Client with Bootstrap, jquery, Analysis with Jupyter notebook, Implementation of Charts, Design, Architecture
 * ** Hasan Halacli: Web app server with Flask, Analysis with Rapid miner
 * ** Anusha Bangaru: Data collection, Concept and Logo design, Front-end design
-* ** Implementation of Charts
+* ** Nina Laabs: Implementation of Charts
 
 ## Acknowledgements
 
