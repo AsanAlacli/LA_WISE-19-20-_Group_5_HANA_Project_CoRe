@@ -27,7 +27,7 @@ For this project we have used the Flask, Scikit learn, C3 in addition to bootstr
 
 * [Flask] (https://flask.palletsprojects.com/) - 
 * [Scikit learn] (https://scikit-learn.org/) -
-* [C3] (https://c3js.org/) - Front-end web app framework fot constructing charts
+* [C3] (https://c3js.org/) - Front-end web app framework foe designing and constructing charts
 * [Bootstrap] (https://getbootstrap.com/) - CSS Framework used for Front-end Design
 
 ## Getting Started
@@ -45,7 +45,6 @@ If you want to run the project locally you will need to install Python in your s
 
 ```
 python app.py
-
 ```
 The app should be opened on a browser on http://127.0.0.1:5000/
 
