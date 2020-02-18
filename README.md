@@ -1,19 +1,19 @@
 # Course Recommendation 
 
-Course Recommendation is a web application built for the ISE students of university of Duisburg-essen to predict their grade and recommend the course based on the grade. this web application has been developed as a final project for the lecture "Learning Analytics" .
+Course Recommendation is a web application built for the ISE students of university of Duisburg-Essen to predict their grade and recommend the course based on the grade. This web application has been developed as a final project for the lecture "Learning Analytics".
 
 ## Features and Overview
 
 ### Features
 
-This project has been focused on giving the students an opportunity to analyse their study method based on the survey questions and improve their methodology to achieve good grade in their desired courses. the main features of this project are:
+This project has been focused on giving the students an opportunity to analyse their study method based on the survey questions and improve their methodology to achieve good grade in their desired courses. The main features of this project are:
 
-* Survey section: Questionnaire to predict grade of your desired Course
+* Survey section: Questionnaire to predict grade of your desired course
 * Analysis section:The kind of visualizations of our data set,
    
     1. overview: A bar chart using Mean of grades based on attending courses of male and female Students.
     2. Scatter plot: User interactive. Survey students grade of each study program based on age.
-    3. pie plot: Pass percentage of Students based on gender, age, course name , language, previous knowledge, study time per week
+    3. pie plot: Pass percentage of Students based on gender, age, course name , language, previous knowledge and study time per week.
 
 ### Overview
 
@@ -34,7 +34,7 @@ For this project we have used the Flask, Scikit learn, C3 in addition to bootstr
 
 Follow the instructions if you want to get a copy of the project  and run it on your local machine for development and testing purposes.
 
-### prerequisites
+### Prerequisites
  
 If you want to run the project locally you will need to install Python in your systems
 
