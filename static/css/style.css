@@ -1,11 +1,11 @@
-body{
+body {
     background-image: url("/static/image/color2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000014;
 }
 
-.body{
+.body {
     position: absolute;
     bottom: 30px;
     top: 135px;
@@ -13,66 +13,64 @@ body{
     left: 0;
 }
 
-.main-content{
+.main-content {
     color: white;
     padding: 15px;
-    margin-left: 0;  
+    margin-left: 0;
     width: 100%;
     height: 100%;
     overflow: scroll;
-    border:solid 1px #3bbde1;
+    border: solid 1px #3bbde1;
     border-radius: 4px;
-    
 }
 
-.result-content{
-    color: rgb(12, 12, 12);
+.result-content {
+    color: rgb(54, 53, 56);
     padding: 15px;
-    margin-left: 25px;  
-    width: 90%;
-    height: 150px;
+    margin-left: 25px;
+    width: 100%;
+    height: 250px;
     overflow: scroll;
-    border:solid 1px #070707;
+    border: solid 1px #afaecc;
     border-radius: 4px;
-    display:none;
+    display: none;
 }
-.main-content.analytic{
-    
+
+.main-content.analytic {
     padding: 0;
-
-    
 }
 
-.fit-parent{
+.fit-parent {
     overflow-y: hidden;
     height: 100%;
 }
+
 .navbar-inverse {
     background-color: #000014;
 }
 
-.select-size{
+.select-size {
     width: 100%;
 }
 
-.font{
-    color:black;
+.font {
+    color: black;
 }
-.analytic
-{
+
+.analytic {
     background-color: #00000094;
 }
 
-.analytic > h2
-{
+.analytic>h2 {
     text-align: center;
-    text-shadow:rgb(139, 129, 129);
+    text-shadow: rgb(139, 129, 129);
     font-size: medium;
 }
 
 .analytic .x.axis text {
     fill: white;
 }
+
 .analytic .y.axisRight text {
     fill: orange;
 }
@@ -83,21 +81,21 @@ body{
 
 .analytic .axis path,
 .analytic .axis line {
-  fill: none;
-  stroke:white;
-  shape-rendering: crispEdges;
+    fill: none;
+    stroke: white;
+    shape-rendering: crispEdges;
 }
 
 .analytic .bar1 {
-  fill: steelblue;
+    fill: steelblue;
 }
 
 .analytic .bar2 {
-  fill: orange;
+    fill: orange;
 }
 
 .analytic .x.axis path {
-  display: none;
+    display: none;
 }
 
 .tick text {
@@ -113,36 +111,40 @@ body{
 }
 
 .domain text {
-    fill:white;
-}
-.c3 path, .c3 line {
-    fill: none;
-    stroke:white ;
+    fill: white;
 }
 
-.c3-tooltip td{
+.c3 path,
+.c3 line {
+    fill: none;
+    stroke: white;
+}
+
+.c3-tooltip td {
     color: black;
 }
 
-.c3-circle{
-    fill:rgb(255, 255, 255);
+.c3-circle {
+    fill: rgb(255, 255, 255);
 }
 
-.c3-axis-y-label,.c3-axis-x-label{
-    fill:white;
+.c3-axis-y-label,
+.c3-axis-x-label {
+    fill: white;
 }
 
 .c3-legend-item text {
-    fill:white;
+    fill: white;
 }
+
 #chart .c3-line-grade {
     stroke-width: 5px;
-    stroke:white ;
-  }
+    stroke: white;
+}
 
-  .navbar > a.navbar-brand {
+.navbar>a.navbar-brand {
     background-color: #f8f9fa9e;
     border-radius: 15px;
     padding-left: 3px;
     padding-right: 3px;
-  }
+}

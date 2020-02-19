@@ -1,3 +1,4 @@
+from flask import Flask
 from flask import Flask, render_template, flash, request, url_for,jsonify,json
 from werkzeug.utils import redirect
 from loaddata import loadTrainData ,loadDataset,encodeData,clearData
@@ -11,7 +12,7 @@ app.config.from_object(__name__)
 CLASSIFIEDFIELD='grade'
 
 dataset=loadDataset('data')
-#
+#getting data to numeric
 encodendDataset=dataset.copy()
 encodendDataset=clearData(encodendDataset,"Zeitstempel,country,studyprogram,langLevel(Eng),langLevel(Ger),difficulty,learningmethodLectures,learningmethodExercises,learningmethodSelfstudy,learningmethodGroupStudy,participate,langLevelenough,comments,x")
 encodedDataList=[]
@@ -19,6 +20,26 @@ for item in encodendDataset:
     if(item!=CLASSIFIEDFIELD):
         encodedDataList.append((item,encodeData(encodendDataset,item)))
 
+# #note from Dr.Arham: we need to change it, too complicated
+# def handle_non_numerical_data(df):
+#     columns = df.columns.values
+#     for column in columns:
+#         text_digit_vals = {}
+#         def convert_to_int(val):
+#             return text_digit_vals[val]
+
+#         if df[column].dtype != np.int64 and df[column].dtype != np.float64:
+#             column_contents = df[column].values.tolist()
+#             unique_elements = set(column_contents)
+#             x = 0
+#             for unique in unique_elements:
+#                 if unique not in text_digit_vals:
+#                     text_digit_vals[unique] = x
+#                     x+=1
+
+#             df[column] = list(map(convert_to_int, df[column]))
+
+#     return df
 
 
 def converGrade20toGrade4(grade):
@@ -91,6 +112,8 @@ def survey():
             coursenames=item[1]
         if(item[0]=='mainlanguages'):
             mainlanguagess=item[1]
+        #if(item[0]=='langLevel(Eng)'):
+            #langLevel(Eng)s=item[1]
         if(item[0]=='priviousknowledge'):
             priviousknowledges=item[1]
         if(item[0]=='hours'):
@@ -105,6 +128,7 @@ def predict():
     question[0] =  int(req_data['gender'])
     question[1] =  int(req_data['age'])
     question[2] =  int(req_data['coursename'])
+    #question[2] =  int(req_data['langLevel(Eng)'])
     question[3] =  int(req_data['mainlanguages'])
     question[4] =  int(req_data['priviousknowledge'])
     question[5] =  int(req_data['hours'])
