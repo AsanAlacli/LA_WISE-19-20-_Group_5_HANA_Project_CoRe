@@ -1,4 +1,4 @@
-![]()
+![](static/image/Logo.jpg)
 # Course Recommendation 
 
 Course Recommendation is a web application built for the ISE students of University of Duisburg-Essen to predict their grade and recommend the course based on the grade. This web application has been developed as a final project for the lecture "Learning Analytics WiSe19/20".
