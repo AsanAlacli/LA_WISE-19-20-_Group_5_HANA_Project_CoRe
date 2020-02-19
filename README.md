@@ -1,6 +1,8 @@
 # Course Recommendation 
 
-Course Recommendation is a web application built for the ISE students of university of Duisburg-Essen to predict their grade and recommend the course based on the grade. This web application has been developed as a final project for the lecture "Learning Analytics".
+Course Recommendation is a web application built for the ISE students of University of Duisburg-Essen to predict their grade and recommend the course based on the grade. This web application has been developed as a final project for the lecture "Learning Analytics WiSe19/20".
+
+
 
 ## Features and Overview
 
@@ -48,6 +50,8 @@ python app.py
 ```
 The app should be opened on a browser on http://127.0.0.1:5000/
 
+
+
 ## Authors
 
 * ** Hoda Ghanbarzadeh: Web App Server with Flask, Web App Client with Bootstrap, jquery, Analysis with Jupyter notebook, Implementation of Charts, Design, Architecture
@@ -57,6 +61,6 @@ The app should be opened on a browser on http://127.0.0.1:5000/
 
 ## Acknowledgements
 
-* Special thanks to prof. Dr. Chatti and Dr. Muslim for supporting us during this class project.
+* Special thanks to Prof. Dr. Chatti and Dr. Muslim for supporting us during this class project.
 
  
