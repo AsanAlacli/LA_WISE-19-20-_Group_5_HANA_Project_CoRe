@@ -55,13 +55,13 @@ The app should be opened on a browser on http://127.0.0.1:5000/
 
 ## Screenshots of the Visualizations
 
-![](static/image/Picture1.png)
-![](static/image/Picture1.png)
-![](static/image/Picture1.png)
-![](static/image/Picture1.png)
-![](static/image/Picture1.png)
-![](static/image/Picture1.png)
-
+![](static/image/1.png)
+![](static/image/2.png)
+![](static/image/3.png)
+![](static/image/4.png)
+![](static/image/5.png)
+![](static/image/6.png)
+![](static/image/7.png)
 
 ## Authors
 
