@@ -17,6 +17,8 @@ This project has been focused on giving the students an opportunity to analyse t
     1. overview: A bar chart using Mean of grades based on attending courses of male and female Students.
     2. Scatter plot: User interactive. Survey students grade of each study program based on age.
     3. pie plot: Pass percentage of Students based on gender, age, course name , language, previous knowledge and study time per week.
+###   Project Architecture 
+![](static/image/Picture1.png)
 
 ### Overview
 
@@ -51,6 +53,14 @@ python app.py
 ```
 The app should be opened on a browser on http://127.0.0.1:5000/
 
+## Screenshots of the Visualizations
+
+![](static/image/Picture1.png)
+![](static/image/Picture1.png)
+![](static/image/Picture1.png)
+![](static/image/Picture1.png)
+![](static/image/Picture1.png)
+![](static/image/Picture1.png)
 
 
 ## Authors
